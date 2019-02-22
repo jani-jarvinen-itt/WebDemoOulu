@@ -12,7 +12,11 @@ namespace AspNetCoreBackend.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            string tiedosto = @"C:\CodeOulu\WebDemoOulu\AspNetCoreBackend\AspNetCoreBackend\wwwroot\Otsikot.txt";
+            List<string> otsikot =
+                System.IO.File.ReadAllLines(tiedosto).ToList();
+
+            return View(otsikot);
         }
 
         public IActionResult About()
