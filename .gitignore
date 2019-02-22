@@ -3,3 +3,5 @@
 ################################################################################
 
 /AspNetCoreBackend/.vs
+/AspNetCoreBackend/AspNetCoreBackend/bin/Debug/netcoreapp2.1
+/AspNetCoreBackend/AspNetCoreBackend/obj
