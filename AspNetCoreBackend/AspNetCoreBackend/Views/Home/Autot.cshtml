@@ -1,0 +1,23 @@
+﻿@model List<AspNetCoreBackend.Models.Auto>
+@{
+    ViewData["Title"] = "About";
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Merkki</th>
+            <th>Malli</th>
+            <th>Huippunopeus</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (AspNetCoreBackend.Models.Auto auto in Model) {
+            <tr>
+                <td>@auto.Merkki</td>
+                <td>@auto.Malli</td>
+                <td>@auto.Huippunopeus</td>
+            </tr>
+        }
+    </tbody>
+</table>

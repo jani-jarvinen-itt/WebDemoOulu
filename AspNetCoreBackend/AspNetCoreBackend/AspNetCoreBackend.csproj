@@ -10,6 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Home\Autot.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Home\Info.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
