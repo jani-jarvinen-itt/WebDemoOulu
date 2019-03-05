@@ -1,0 +1,3 @@
+﻿Komento mallin luontiin Package Manager Consolessa (PMC):
+
+Scaffold-DbContext "Server=localhost;Database=Northwind;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Database
