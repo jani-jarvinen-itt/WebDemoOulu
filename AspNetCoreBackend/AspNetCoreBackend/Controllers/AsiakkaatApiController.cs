@@ -74,5 +74,24 @@ namespace AspNetCoreBackend.Controllers
 
             return asiakas;
         }
+
+
+        [HttpDelete]
+        [Route("{asiakasId}")]
+        public bool Poisto(string asiakasId)
+        {
+            NorthwindContext context = new NorthwindContext();
+            Customers asiakas = context.Customers.Find(asiakasId);
+
+            if (asiakas == null)
+            {
+                return false;
+            }
+
+            context.Customers.Remove(asiakas);
+            context.SaveChanges();
+
+            return true;
+        }
     }
 }
