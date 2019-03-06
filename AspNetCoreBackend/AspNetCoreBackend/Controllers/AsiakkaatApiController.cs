@@ -12,7 +12,7 @@ namespace AspNetCoreBackend.Controllers
     [ApiController]
     public class AsiakkaatApiController : ControllerBase
     {
-        [Route("listaus")]
+        [Route("")]
         public List<Customers> Listaus()
         {
             NorthwindContext context = new NorthwindContext();
@@ -21,7 +21,7 @@ namespace AspNetCoreBackend.Controllers
             return allCustomers;
         }
 
-        [Route("yksittäinen/{asiakasId}")]
+        [Route("{asiakasId}")]
         public Customers Yksittäinen(string asiakasId)
         {
             NorthwindContext context = new NorthwindContext();
