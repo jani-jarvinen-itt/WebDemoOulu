@@ -12,6 +12,7 @@ namespace AspNetCoreBackend.Controllers
     [ApiController]
     public class AsiakkaatApiController : ControllerBase
     {
+        [HttpGet]
         [Route("")]
         public List<Customers> Listaus()
         {
@@ -21,6 +22,7 @@ namespace AspNetCoreBackend.Controllers
             return allCustomers;
         }
 
+        [HttpGet]
         [Route("{asiakasId}")]
         public Customers Yksittäinen(string asiakasId)
         {
@@ -33,6 +35,17 @@ namespace AspNetCoreBackend.Controllers
             //                      select c).FirstOrDefault();
 
             return asiakas;
+        }
+
+        [HttpPost]
+        [Route("")]
+        public bool Luonti(Customers uusi)
+        {
+            NorthwindContext context = new NorthwindContext();
+            context.Customers.Add(uusi);
+            context.SaveChanges();
+
+            return true;
         }
     }
 }
