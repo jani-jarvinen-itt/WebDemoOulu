@@ -39,13 +39,40 @@ namespace AspNetCoreBackend.Controllers
 
         [HttpPost]
         [Route("")]
-        public bool Luonti(Customers uusi)
+        public bool Luonti([FromBody] Customers uusi)
         {
             NorthwindContext context = new NorthwindContext();
             context.Customers.Add(uusi);
             context.SaveChanges();
 
             return true;
+        }
+
+        [HttpPut]
+        [Route("{asiakasId}")]
+        public Customers Muokkaus(string asiakasId, [FromBody] Customers muutokset)
+        {
+            NorthwindContext context = new NorthwindContext();
+            Customers asiakas = context.Customers.Find(asiakasId);
+
+            // löytyikö asiakas annetulla id:llä?
+            if (asiakas == null)
+            {
+                return null;
+            }
+
+            // muokkaus
+            asiakas.CompanyName = muutokset.CompanyName;
+            asiakas.ContactName = muutokset.ContactName;
+            asiakas.ContactTitle = muutokset.ContactTitle;
+            asiakas.City = muutokset.City;
+            asiakas.Country = muutokset.Country;
+            asiakas.Phone = muutokset.Phone;
+            asiakas.Fax = muutokset.Fax;
+
+            context.SaveChanges();
+
+            return asiakas;
         }
     }
 }
