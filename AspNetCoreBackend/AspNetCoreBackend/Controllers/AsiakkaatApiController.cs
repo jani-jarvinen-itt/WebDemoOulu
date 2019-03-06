@@ -12,7 +12,6 @@ namespace AspNetCoreBackend.Controllers
     [ApiController]
     public class AsiakkaatApiController : ControllerBase
     {
-
         [Route("listaus")]
         public List<Customers> Listaus()
         {
@@ -20,6 +19,20 @@ namespace AspNetCoreBackend.Controllers
             List<Customers> allCustomers = context.Customers.ToList();
 
             return allCustomers;
+        }
+
+        [Route("yksittäinen/{asiakasId}")]
+        public Customers Yksittäinen(string asiakasId)
+        {
+            NorthwindContext context = new NorthwindContext();
+            Customers asiakas = context.Customers.Find(asiakasId);
+
+            // LINQ
+            //Customers asiakas2 = (from c in context.Customers
+            //                      where c.CustomerId == asiakasId
+            //                      select c).FirstOrDefault();
+
+            return asiakas;
         }
     }
 }
