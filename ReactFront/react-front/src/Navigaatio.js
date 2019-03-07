@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Navigaatio extends Component {
   render() {
     return (
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Oma React Demo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
