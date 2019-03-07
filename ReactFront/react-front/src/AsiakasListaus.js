@@ -44,12 +44,37 @@ class AsiakasLista extends Component {
         let asiakkaat = [];
         for (let index = 0; index < this.state.data.length; index++) {
             let nimi = this.state.data[index].companyName;
-            asiakkaat.push(<h3 style={{color: "orangered"}}>{nimi}</h3>);
+            let kontakti = this.state.data[index].contactName;
+            let kaupunki = this.state.data[index].city;
+
+            asiakkaat.push(
+              <tr>
+                <th scope="row">{index+1}</th>
+                <td>{nimi}</td>
+                <td>{kontakti}</td>
+                <td>{kaupunki}</td>
+              </tr>);
         }
 
         return (
             <div>
-                {asiakkaat}
+                <p></p>
+                <h1>Asiakkaat Northwind-tietokannasta</h1>
+                <p></p>
+
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Yritys</th>
+                        <th scope="col">Kontakti</th>
+                        <th scope="col">Kaupunki</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {asiakkaat}
+                    </tbody>
+                </table>                
             </div>
         );
     }    
