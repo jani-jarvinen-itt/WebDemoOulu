@@ -5,11 +5,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import AsiakasLista from './AsiakasListaus';
 import Navigaatio from './Navigaatio';
+import LähetysNappi from './LähetysNappi';
 
 ReactDOM.render(
     <div>
         <Navigaatio />
         <AsiakasLista />
+        <LähetysNappi />
     </div>
     , document.getElementById('root'));
 
