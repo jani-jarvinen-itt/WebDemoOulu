@@ -29,7 +29,9 @@ namespace AspNetCoreBackend
                 options.AddPolicy("OmaCorsPolicy",
                 builder =>
                 {
-                    builder.AllowAnyOrigin();
+                    builder.AllowAnyOrigin()
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
                 });
             });
 
